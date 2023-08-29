@@ -1,6 +1,11 @@
 let user = {
+    name: '',
     totalMoney: 0
 }
+
+user.name = prompt('what is your name Landscaper?')
+
+alert(`Welcome ${user.name} your goal in this game is to reach $10,000 by using tools to cut grass! Good luck :) `)
 
 
 const useTeeth = document.querySelector('.teeth');
@@ -71,6 +76,38 @@ function updateMoney () {
 //We can call this function to call money
 
 
+function checkThreshhold(){
+    if (user.totalMoney >= 5 && !alertStatusForS){
+        alert('You can now buy Siccors! To make $5 per cut!')
+        buyScissors.style.display = 'block'; 
+        alertStatusForS = true;
+    }
+    if (user.totalMoney >= 25 && !alertStatusForL) {
+        alert('You can now buy a push lawnmower!')
+        buyLawnmower.style.display = "block"
+        alertStatusForL = true;
+    }
+    if(user.totalMoney >= 250 && !alertStatusForPl){
+        alert('You can now buy a powered lawnmower!')
+        buyPlawnmower.style.display = 'block'
+        alertStatusForPl = true;
+    }
+
+    if(user.totalMoney >=500 && !alertStatusForStudents){
+        alert('You can now hire students!')
+        buyStudents.style.display = 'block'
+        alertStatusForStudents = true;
+    }
+    if(user.totalMoney >= 10000 && !gameOver) {
+        alert(`Congradulations You beat the Game ${user.name} :)`)
+        alert('You can contiue if you would like goodbye for now :)')
+        gameOver = true;
+    
+    }
+}
+//instead of calling them over and over we made a function for them :)
+
+
 
 
 
@@ -92,19 +129,10 @@ let gameOver = false;
 useTeeth.addEventListener('click', function () {
     user.totalMoney ++
     updateMoney()
-
-    if (user.totalMoney >= 5 && !alertStatusForS){
-        alert('You can now buy Siccors! To make $5 per cut!')
-        buyScissors.style.display = 'block'; 
-        alertStatusForS = true;
-    }
-    if (user.totalMoney >= 25 && !alertStatusForL) {
-        alert('You can now buy a push lawnmower!')
-        buyLawnmower.style.display = "block"
-        alertStatusForL = true;
-    }
-
+    checkThreshhold()
 })
+
+
 
 //-------------------------------------------------------------Buying Scissors on the bottom
 buyButtonS.addEventListener('click', function () {
@@ -123,29 +151,7 @@ useScissors.addEventListener('click', function () {
     user.totalMoney += 5
     updateMoney()
 
-    if (user.totalMoney >= 25 && !alertStatusForL) {
-        alert('You can now buy a push lawnmower!')
-        buyLawnmower.style.display = "block"
-        alertStatusForL = true;
-    }
-
-    if(user.totalMoney >= 250 && !alertStatusForPl){
-        alert('You can now buy a powered lawnmower!')
-        buyPlawnmower.style.display = 'block'
-        alertStatusForPl = true;
-    }
-
-    if(user.totalMoney >=500 && !alertStatusForStudents){
-        alert('You can now buy starving students!')
-        buyStudents.style.display = 'block'
-        alertStatusForStudents = true;
-    }
-    if(user.totalMoney >= 1000 && !gameOver) {
-        alert('Congradulations You beat the Game :)')
-        alert('You can contiue if you would like goodbye for now :)')
-        gameOver = true;
-    
-    }
+   checkThreshhold()
 })
 
 //---------------------------------------------------------Buying Lawnmower Button
@@ -162,22 +168,7 @@ useLawnmower.addEventListener('click', function () {
     user.totalMoney += 50;
     updateMoney()
 
-    if(user.totalMoney >= 250 && !alertStatusForPl){
-        alert('You can now buy a powered lawnmower!')
-        buyPlawnmower.style.display = 'block'
-        alertStatusForPl = true;
-    }
-    if(user.totalMoney >=500 && !alertStatusForStudents){
-        alert('You can now buy starving students!')
-        buyStudents.style.display = 'block'
-        alertStatusForStudents = true;
-    }
-    if(user.totalMoney >= 1000 && !gameOver) {
-        alert('Congradulations You beat the Game :)')
-        alert('You can contiue if you would like goodbye for now :)')
-        gameOver = true;
-    
-    }
+    checkThreshhold()
 })
 
 //---------------------------------------------------------------Buying Powered Lawnmower
@@ -193,17 +184,7 @@ usePlawnmower.addEventListener('click', function () {
     user.totalMoney += 100
     updateMoney()
 
-    if(user.totalMoney >=500 && !alertStatusForStudents){
-        alert('You can now buy starving students!')
-        buyStudents.style.display = 'block'
-        alertStatusForStudents = true;
-    }
-    if(user.totalMoney >= 1000 && !gameOver) {
-        alert('Congradulations You beat the Game :)')
-        alert('You can contiue if you would like goodbye for now :)')
-        gameOver = true;
-    
-    }
+   checkThreshhold()
 })
 
 //-------------------------------------------------------------------------Buying Starving Students
@@ -212,7 +193,7 @@ buyStudents.addEventListener('click', function () {
     user.totalMoney -= 500
     updateMoney()
     buyStudents.style.display = 'none'
-    alert('All you need now is $1000 and You will Win!!')
+    alert('All you need now is $10000 and You will Win!!')
 })
 
 //------------------------------------------------------------------------------Use Starving Student 
@@ -220,11 +201,7 @@ useStudents.addEventListener('click', function () {
     user.totalMoney += 250
     updateMoney()
 
-    if(user.totalMoney >= 1000 && !gameOver) {
-        alert('Congradulations You beat the Game :)')
-        alert('You can contiue if you would like goodbye for now :)')
-        gameOver = true;
-    
-    }
+   checkThreshhold()
 })
+
 

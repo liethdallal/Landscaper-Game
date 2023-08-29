@@ -5,7 +5,7 @@ body {
 }
 
 .teeth {
-    font-size: 45px;
+    font-size: 35px;
     border-radius: 15px;
     width: 400px;
     height: 150px;
@@ -27,7 +27,7 @@ body {
 }
 
 .scissors {
-    font-size: 45px;
+    font-size: 35px;
     border-radius: 15px;
     width: 400px;
     height: 150px;
@@ -48,7 +48,7 @@ body {
 }
 
 .lawnmower {
-    font-size: 45px;
+    font-size: 35px;
     border-radius: 15px;
     width: 400px;
     height: 150px;
@@ -68,7 +68,7 @@ body {
 }
 
 .plawnmower {
-    font-size: 45px;
+    font-size: 30px;
     border-radius: 15px;
     width: 400px;
     height: 150px;
@@ -76,7 +76,7 @@ body {
 }
 
 .students {
-    font-size: 45px;
+    font-size: 30px;
     border-radius: 15px;
     width: 400px;
     height: 150px;
