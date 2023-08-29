@@ -1,0 +1,103 @@
+body {
+    background-image: url("./img/preview.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.teeth {
+    font-size: 45px;
+    border-radius: 15px;
+    width: 400px;
+    height: 150px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.total-money {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    color: black;
+}
+
+.scissors {
+    font-size: 45px;
+    border-radius: 15px;
+    width: 400px;
+    height: 150px;
+    display: none;
+}
+
+.buy-scissor {
+    display: none;
+    font-size: 40px;
+    color: aqua
+
+}
+
+.buy-lawnmower {
+    display:none;
+    font-size: 40px;
+    color:aqua;
+}
+
+.lawnmower {
+    font-size: 45px;
+    border-radius: 15px;
+    width: 400px;
+    height: 150px;
+    display: none;
+}
+
+.buy-poweredmower {
+    display:none;
+    font-size: 40px;
+    color:aqua;
+}
+
+.buy-students {
+    display:none;
+    font-size: 40px;
+    color:aqua;
+}
+
+.plawnmower {
+    font-size: 45px;
+    border-radius: 15px;
+    width: 400px;
+    height: 150px;
+    display: none;
+}
+
+.students {
+    font-size: 45px;
+    border-radius: 15px;
+    width: 400px;
+    height: 150px;
+    display: none;
+}
+
+/* Adjustments for screens smaller than 600px */
+@media (max-width: 600px) {
+    /* Adjust font size, padding, and margins as needed */
+    body {
+        font-size: 14px;
+    }
+    
+    /* Modify button styles for smaller screens */
+    .button-container button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    
+    /* Adjust margins and paddings as needed */
+    .total-money {
+        margin: 10px;
+    }
+}
