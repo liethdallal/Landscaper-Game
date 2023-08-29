@@ -3,9 +3,12 @@ let user = {
     totalMoney: 0
 }
 
-user.name = prompt('what is your name Landscaper?')
-
-alert(`Welcome ${user.name} your goal in this game is to reach $10,000 by using tools to cut grass! Good luck :) `)
+setTimeout(function() {
+    var user = {}; // Create an object to store user information
+    user.name = prompt('What is your name, Landscaper?');
+    
+    alert(`Welcome ${user.name}! Your goal in this game is to reach $10,000 by using tools to cut grass. Good luck!`);
+}, 5000); // 5000 milliseconds = 5 seconds
 
 
 const useTeeth = document.querySelector('.teeth');
